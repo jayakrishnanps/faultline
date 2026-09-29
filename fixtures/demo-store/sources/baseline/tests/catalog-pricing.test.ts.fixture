@@ -1,0 +1,4 @@
+import assert from 'node:assert/strict';
+import { test } from 'node:test';
+import { catalogPrice } from '../src/catalog/pricing';
+test('catalog-pricing', () => { assert.equal(catalogPrice(20), 20); });

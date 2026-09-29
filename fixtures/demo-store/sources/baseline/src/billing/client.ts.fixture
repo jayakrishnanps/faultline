@@ -1,0 +1,3 @@
+import { currentSession } from '../auth/session';
+import { recordBilling } from '../audit/record';
+export function billingAccount() { const id = currentSession().userId; recordBilling(id); return id; }

@@ -1,0 +1,2 @@
+import { currentSession } from './src/auth/server';
+export function middleware() { return currentSession().userId ? undefined : Response.redirect('https://example.invalid/login'); }

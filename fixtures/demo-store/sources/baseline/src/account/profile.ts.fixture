@@ -1,0 +1,3 @@
+import { currentSession } from '../auth/server';
+import { titleCase } from '../shared';
+export function profile() { return { name: titleCase(currentSession().userId) }; }

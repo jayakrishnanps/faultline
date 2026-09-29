@@ -1,0 +1,3 @@
+import { describeEvent } from './events';
+import { dateLabel } from '../shared/date.js';
+export function recordBilling(id: string) { return `${dateLabel('2026-01-01')} ${describeEvent(id)}`; }

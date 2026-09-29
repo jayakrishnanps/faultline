@@ -1,0 +1,493 @@
+{
+  "version": 1,
+  "repositoryId": "d3e0a110-1111-4111-8111-111111111111",
+  "indexVersion": "demo-store-source-v1",
+  "limits": {
+    "maxSourceFiles": 100,
+    "maxFileBytes": 256000,
+    "maxTotalSourceBytes": 10485760
+  },
+  "files": [
+    {
+      "path": "app/account/page.tsx",
+      "language": "typescript",
+      "role": "route",
+      "purpose": "Account settings view"
+    },
+    {
+      "path": "app/api/billing/route.ts",
+      "language": "typescript",
+      "role": "route",
+      "purpose": "Billing JSON endpoint"
+    },
+    {
+      "path": "app/api/session/route.ts",
+      "language": "typescript",
+      "role": "route",
+      "purpose": "Session JSON endpoint"
+    },
+    {
+      "path": "app/billing/page.tsx",
+      "language": "typescript",
+      "role": "route",
+      "purpose": "Invoice display view"
+    },
+    {
+      "path": "app/catalog/page.tsx",
+      "language": "typescript",
+      "role": "route",
+      "purpose": "Public product catalog"
+    },
+    {
+      "path": "app/dashboard/page.tsx",
+      "language": "typescript",
+      "role": "route",
+      "purpose": "Authenticated dashboard through auth barrels"
+    },
+    {
+      "path": "app/layout.tsx",
+      "language": "typescript",
+      "role": "layout",
+      "purpose": "Shared shell"
+    },
+    {
+      "path": "app/page.tsx",
+      "language": "typescript",
+      "role": "route",
+      "purpose": "Store landing page"
+    },
+    {
+      "path": "components/AccountPanel.tsx",
+      "language": "typescript",
+      "role": "component",
+      "purpose": "Profile and preferences rendering"
+    },
+    {
+      "path": "components/BillingSummary.tsx",
+      "language": "typescript",
+      "role": "component",
+      "purpose": "Invoice list presentation"
+    },
+    {
+      "path": "components/Button.tsx",
+      "language": "typescript",
+      "role": "component",
+      "purpose": "Shared presentation primitive"
+    },
+    {
+      "path": "components/InvoiceLine.tsx",
+      "language": "typescript",
+      "role": "component",
+      "purpose": "Localized billing label consumer"
+    },
+    {
+      "path": "components/Navigation.tsx",
+      "language": "typescript",
+      "role": "component",
+      "purpose": "Shell navigation depends on auth"
+    },
+    {
+      "path": "components/ProductGrid.tsx",
+      "language": "typescript",
+      "role": "component",
+      "purpose": "Catalog rendering"
+    },
+    {
+      "path": "middleware.ts",
+      "language": "typescript",
+      "role": "middleware",
+      "purpose": "Session redirect boundary"
+    },
+    {
+      "path": "src/account/preferences.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "Preferences with literal dynamic import"
+    },
+    {
+      "path": "src/account/profile.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "Authenticated profile model"
+    },
+    {
+      "path": "src/audit/events.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "One side of intentional dependency cycle"
+    },
+    {
+      "path": "src/audit/labels.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "Other side of intentional dependency cycle"
+    },
+    {
+      "path": "src/audit/record.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "Billing audit summary, no side-effecting service"
+    },
+    {
+      "path": "src/auth/index.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "First auth re-export barrel"
+    },
+    {
+      "path": "src/auth/permissions.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "Billing authorization policy"
+    },
+    {
+      "path": "src/auth/server.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "Second auth re-export barrel"
+    },
+    {
+      "path": "src/auth/session.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "Central session dependency"
+    },
+    {
+      "path": "src/auth/token.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "Broad shared authentication change root"
+    },
+    {
+      "path": "src/auth/types.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "Type-only auth contract"
+    },
+    {
+      "path": "src/billing/client.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "Authenticated billing data adapter"
+    },
+    {
+      "path": "src/billing/format-label.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "Narrow follow-up root, no barrel export"
+    },
+    {
+      "path": "src/billing/index.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "Billing re-export barrel excludes label formatting"
+    },
+    {
+      "path": "src/billing/invoices.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "Invoice data and summary"
+    },
+    {
+      "path": "src/billing/money.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "Currency rounding"
+    },
+    {
+      "path": "src/catalog/index.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "Catalog public re-export"
+    },
+    {
+      "path": "src/catalog/pricing.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "Localized catalog adjustment root"
+    },
+    {
+      "path": "src/catalog/products.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "Small static catalog"
+    },
+    {
+      "path": "src/diagnostics/malformed.ts",
+      "language": "typescript",
+      "role": "diagnostic",
+      "purpose": "Intentionally malformed TypeScript must be reported"
+    },
+    {
+      "path": "src/diagnostics/missing-import.ts",
+      "language": "typescript",
+      "role": "diagnostic",
+      "purpose": "Missing local module must remain unresolved"
+    },
+    {
+      "path": "src/experiments/unused-coupon.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "Isolated experiment with no local edges"
+    },
+    {
+      "path": "src/jobs/renew-subscriptions.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "Background-shaped consumer of billing and auth"
+    },
+    {
+      "path": "src/shared/config.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "Shared deterministic configuration"
+    },
+    {
+      "path": "src/shared/date.js",
+      "language": "javascript",
+      "role": "module",
+      "purpose": "JavaScript date formatting"
+    },
+    {
+      "path": "src/shared/ids.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "Stable local identifiers"
+    },
+    {
+      "path": "src/shared/index.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "Shared mixed-language re-export chain"
+    },
+    {
+      "path": "src/shared/legacy-slug.js",
+      "language": "javascript",
+      "role": "module",
+      "purpose": "Literal CommonJS require example"
+    },
+    {
+      "path": "src/shared/strings.ts",
+      "language": "typescript",
+      "role": "module",
+      "purpose": "String presentation helpers"
+    },
+    {
+      "path": "tests/account-profile.test.ts",
+      "language": "typescript",
+      "role": "test",
+      "purpose": "Inert account-profile association evidence"
+    },
+    {
+      "path": "tests/audit-events.test.ts",
+      "language": "typescript",
+      "role": "test",
+      "purpose": "Inert audit-events association evidence"
+    },
+    {
+      "path": "tests/auth-permissions.test.ts",
+      "language": "typescript",
+      "role": "test",
+      "purpose": "Inert auth-permissions association evidence"
+    },
+    {
+      "path": "tests/auth-session.test.ts",
+      "language": "typescript",
+      "role": "test",
+      "purpose": "Inert auth-session association evidence"
+    },
+    {
+      "path": "tests/auth-token.test.ts",
+      "language": "typescript",
+      "role": "test",
+      "purpose": "Inert auth-token association evidence"
+    },
+    {
+      "path": "tests/billing-client.test.ts",
+      "language": "typescript",
+      "role": "test",
+      "purpose": "Inert billing-client association evidence"
+    },
+    {
+      "path": "tests/billing-format.test.ts",
+      "language": "typescript",
+      "role": "test",
+      "purpose": "Inert billing-format association evidence"
+    },
+    {
+      "path": "tests/billing-money.test.ts",
+      "language": "typescript",
+      "role": "test",
+      "purpose": "Inert billing-money association evidence"
+    },
+    {
+      "path": "tests/catalog-pricing.test.ts",
+      "language": "typescript",
+      "role": "test",
+      "purpose": "Inert catalog-pricing association evidence"
+    },
+    {
+      "path": "tests/catalog-products.test.ts",
+      "language": "typescript",
+      "role": "test",
+      "purpose": "Inert catalog-products association evidence"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "localized",
+      "base": "baseline",
+      "previousScenario": null,
+      "description": "Adjust only catalog pricing.",
+      "overlays": [
+        "src/catalog/pricing.ts"
+      ],
+      "changes": [
+        {
+          "path": "src/catalog/pricing.ts",
+          "previousPath": null,
+          "changeType": "modified",
+          "additions": 1,
+          "deletions": 1,
+          "isSupported": true,
+          "skipReason": null
+        }
+      ]
+    },
+    {
+      "id": "shared-authentication",
+      "base": "baseline",
+      "previousScenario": null,
+      "description": "Change shared session lifetime; reaches authenticated routes and billing.",
+      "overlays": [
+        "src/auth/token.ts"
+      ],
+      "changes": [
+        {
+          "path": "src/auth/token.ts",
+          "previousPath": null,
+          "changeType": "modified",
+          "additions": 1,
+          "deletions": 1,
+          "isSupported": true,
+          "skipReason": null
+        }
+      ]
+    },
+    {
+      "id": "localized-follow-up",
+      "base": "baseline",
+      "previousScenario": "shared-authentication",
+      "description": "Restore shared authentication exactly to baseline; localize the remaining PR change to invoice-label formatting.",
+      "overlays": [
+        "src/billing/format-label.ts"
+      ],
+      "changes": [
+        {
+          "path": "src/billing/format-label.ts",
+          "previousPath": null,
+          "changeType": "modified",
+          "additions": 1,
+          "deletions": 1,
+          "isSupported": true,
+          "skipReason": null
+        }
+      ]
+    }
+  ],
+  "expectedPaths": [
+    {
+      "revision": "baseline",
+      "graphSide": "head",
+      "paths": [
+        "src/auth/token.ts",
+        "src/auth/session.ts",
+        "src/auth/index.ts",
+        "src/auth/server.ts",
+        "app/api/session/route.ts"
+      ]
+    },
+    {
+      "revision": "localized",
+      "graphSide": "head",
+      "paths": [
+        "src/catalog/pricing.ts",
+        "src/catalog/products.ts",
+        "src/catalog/index.ts",
+        "components/ProductGrid.tsx",
+        "app/catalog/page.tsx"
+      ]
+    },
+    {
+      "revision": "localized",
+      "graphSide": "head",
+      "paths": [
+        "src/catalog/pricing.ts",
+        "tests/catalog-pricing.test.ts"
+      ]
+    },
+    {
+      "revision": "shared-authentication",
+      "graphSide": "head",
+      "paths": [
+        "src/auth/token.ts",
+        "src/auth/session.ts",
+        "src/auth/index.ts",
+        "src/auth/server.ts",
+        "app/dashboard/page.tsx"
+      ]
+    },
+    {
+      "revision": "shared-authentication",
+      "graphSide": "head",
+      "paths": [
+        "src/auth/token.ts",
+        "src/auth/session.ts",
+        "src/billing/client.ts",
+        "src/billing/invoices.ts",
+        "src/billing/index.ts",
+        "app/api/billing/route.ts"
+      ]
+    },
+    {
+      "revision": "shared-authentication",
+      "graphSide": "head",
+      "paths": [
+        "src/auth/token.ts",
+        "src/auth/session.ts",
+        "tests/auth-session.test.ts"
+      ]
+    },
+    {
+      "revision": "localized-follow-up",
+      "graphSide": "head",
+      "paths": [
+        "src/billing/format-label.ts",
+        "components/InvoiceLine.tsx",
+        "components/BillingSummary.tsx",
+        "app/billing/page.tsx"
+      ]
+    },
+    {
+      "revision": "localized-follow-up",
+      "graphSide": "head",
+      "paths": [
+        "src/billing/format-label.ts",
+        "tests/billing-format.test.ts"
+      ]
+    }
+  ],
+  "features": {
+    "cycle": [
+      "src/audit/events.ts",
+      "src/audit/labels.ts",
+      "src/audit/events.ts"
+    ],
+    "isolated": "src/experiments/unused-coupon.ts",
+    "missingImport": {
+      "importer": "src/diagnostics/missing-import.ts",
+      "specifier": "../shared/not-generated"
+    },
+    "malformed": "src/diagnostics/malformed.ts"
+  }
+}

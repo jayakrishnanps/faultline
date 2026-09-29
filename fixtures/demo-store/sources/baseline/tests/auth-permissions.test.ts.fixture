@@ -1,0 +1,4 @@
+import assert from 'node:assert/strict';
+import { test } from 'node:test';
+import { canBill } from '../src/auth/permissions';
+test('auth-permissions', () => { assert.equal(canBill(), true); });

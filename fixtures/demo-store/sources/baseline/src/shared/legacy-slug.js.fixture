@@ -1,0 +1,2 @@
+const { titleCase } = require('./strings');
+exports.legacySlug = value => titleCase(value).toLowerCase().replaceAll(' ', '-');

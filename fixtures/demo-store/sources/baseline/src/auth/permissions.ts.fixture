@@ -1,0 +1,2 @@
+import { currentSession } from './session';
+export function canBill() { return currentSession().userId.length > 0; }

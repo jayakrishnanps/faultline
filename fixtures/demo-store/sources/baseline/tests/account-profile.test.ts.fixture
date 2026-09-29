@@ -1,0 +1,4 @@
+import assert from 'node:assert/strict';
+import { test } from 'node:test';
+import { profile } from '../src/account/profile';
+test('account-profile', () => { assert.equal(profile().name, 'Demo-store'); });

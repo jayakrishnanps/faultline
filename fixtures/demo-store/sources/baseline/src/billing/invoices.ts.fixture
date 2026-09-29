@@ -1,0 +1,5 @@
+import { billingAccount } from './client';
+import { roundMoney } from './money';
+export type Invoice = { id: string; total: number };
+export function listInvoices(): Invoice[] { return [{ id: billingAccount(), total: roundMoney(12.345) }]; }
+export function summary() { return listInvoices().length; }

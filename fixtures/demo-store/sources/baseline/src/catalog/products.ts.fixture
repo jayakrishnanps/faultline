@@ -1,0 +1,3 @@
+import { catalogPrice } from './pricing';
+import { stableId } from '../shared/ids';
+export function products() { return [{ id: stableId('mug'), name: 'Mug', price: catalogPrice(20) }]; }

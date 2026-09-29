@@ -1,0 +1,3 @@
+import { profile } from '../src/account/profile';
+import { preferences } from '../src/account/preferences';
+export function AccountPanel() { return <section>{profile().name}: {preferences().currency}</section>; }

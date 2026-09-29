@@ -1,0 +1,2 @@
+import { Button } from '../components/Button';
+export default function Home() { return <main><h1>Demo Store</h1><Button label="Browse products" /></main>; }

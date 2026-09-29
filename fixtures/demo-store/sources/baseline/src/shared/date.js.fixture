@@ -1,0 +1,1 @@
+export function dateLabel(iso) { return iso.slice(0, 10); }

@@ -1,0 +1,2 @@
+import { roundMoney } from './money';
+export function formatInvoiceLabel(id: string, total: number) { return `Invoice ${id}: ${roundMoney(total)}`; }

@@ -1,0 +1,2 @@
+import { titleCase } from '../src/shared/strings';
+export function Button({ label }: { label: string }) { return <button>{titleCase(label)}</button>; }

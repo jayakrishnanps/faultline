@@ -1,0 +1,2 @@
+import { currentSession } from '../src/auth/server';
+export function Navigation() { return <nav>{currentSession().userId}</nav>; }

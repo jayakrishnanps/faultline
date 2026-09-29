@@ -1,0 +1,2 @@
+export const catalogDiscount = 0;
+export function catalogPrice(listPrice: number) { return listPrice * (1 - catalogDiscount); }

@@ -1,0 +1,3 @@
+import { products } from '../src/catalog';
+import { Button } from './Button';
+export function ProductGrid() { return <section>{products().map(p => <article key={p.id}>{p.name}: {p.price}<Button label="Add" /></article>)}</section>; }

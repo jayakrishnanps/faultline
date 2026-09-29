@@ -1,0 +1,2 @@
+import { BillingSummary } from '../../components/BillingSummary';
+export default function Billing() { return <BillingSummary />; }

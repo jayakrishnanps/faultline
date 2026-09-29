@@ -1,0 +1,2 @@
+import { generatedFlag } from '../shared/not-generated';
+export const flag = generatedFlag;

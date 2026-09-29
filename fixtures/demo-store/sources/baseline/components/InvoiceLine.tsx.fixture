@@ -1,0 +1,3 @@
+import { formatInvoiceLabel } from '../src/billing/format-label';
+import type { Invoice } from '../src/billing/invoices';
+export function InvoiceLine({ invoice }: { invoice: Invoice }) { return <p>{formatInvoiceLabel(invoice.id, invoice.total)}</p>; }

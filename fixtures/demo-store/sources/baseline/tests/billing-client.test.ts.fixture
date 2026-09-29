@@ -1,0 +1,4 @@
+import assert from 'node:assert/strict';
+import { test } from 'node:test';
+import { billingAccount } from '../src/billing/client';
+test('billing-client', () => { assert.equal(billingAccount(), 'demo-store'); });

@@ -1,0 +1,4 @@
+import assert from 'node:assert/strict';
+import { test } from 'node:test';
+import { formatInvoiceLabel } from '../src/billing/format-label';
+test('billing-format', () => { assert.equal(formatInvoiceLabel('one', 12), 'Invoice one: 12'); });

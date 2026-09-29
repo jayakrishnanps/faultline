@@ -1,0 +1,2 @@
+export const sessionLifetimeSeconds = 7200;
+export function tokenExpiry(issuedAt: number) { return issuedAt + sessionLifetimeSeconds; }

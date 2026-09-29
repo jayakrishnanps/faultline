@@ -1,0 +1,3 @@
+import { eventLabel } from './labels';
+export const defaultSeverity = 'info';
+export function describeEvent(name: string) { return eventLabel(name); }

@@ -1,0 +1,3 @@
+import { listInvoices } from '../../../src/billing';
+import { canBill } from '../../../src/auth/permissions';
+export function GET() { return Response.json(canBill() ? listInvoices() : []); }

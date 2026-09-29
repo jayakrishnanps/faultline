@@ -1,0 +1,4 @@
+import { tokenExpiry } from './token';
+import type { Session } from './types';
+import { applicationName } from '../shared/config';
+export function currentSession(): Session { return { userId: applicationName, expiresAt: tokenExpiry(0) }; }

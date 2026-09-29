@@ -1,0 +1,3 @@
+import { currency } from '../shared/config';
+export function preferences() { return { currency }; }
+export async function refreshPreferences() { return (await import('../shared/config')).currency; }

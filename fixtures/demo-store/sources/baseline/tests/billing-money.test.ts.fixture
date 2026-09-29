@@ -1,0 +1,4 @@
+import assert from 'node:assert/strict';
+import { test } from 'node:test';
+import { roundMoney } from '../src/billing/money';
+test('billing-money', () => { assert.equal(roundMoney(12.345), 12.35); });
