@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { test } from "node:test";
+import { test } from "vitest";
 import { traceDependents } from "../../lib/analyzer/traversal.ts";
 import { demoChangedFiles, demoGraph } from "../../fixtures/demo-store/graph.ts";
 import type { DependencyGraph } from "../../types/graph.ts";

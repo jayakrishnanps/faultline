@@ -17,3 +17,18 @@ Thumbs.db
 /docs/
 *.md
 *.txt
+# Added by code-review-graph
+.code-review-graph/
+
+# Local integrations created by Code Review Graph (absent before installation)
+/.claude/
+/.codebuddy/
+/.cursor/
+/.gemini/
+/.github/instructions/code-review-graph.instructions.md
+/.kiro/
+/.qoder/
+/.mcp.json
+/opencode.jsonc
+/.cursorrules
+/.windsurfrules

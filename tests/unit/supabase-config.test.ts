@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { test } from "node:test";
+import { test } from "vitest";
 import { parsePublicSupabaseConfig } from "../../lib/supabase/config.ts";
 
 test("public configuration accepts project origins and local development", () => {

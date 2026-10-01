@@ -1,0 +1,2 @@
+import React from 'react';
+export default () => <section>{'import("./fake")'}<button onClick={() => import('./action.js')}>Open</button></section>;

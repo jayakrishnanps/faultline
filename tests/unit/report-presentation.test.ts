@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { test } from "node:test";
+import { test } from "vitest";
 import { createDemoPresentation } from "../../fixtures/demo-store/presentation.ts";
 import { featuredEvidence, summarizePresentation } from "../../lib/data/report-presentation.ts";
 import type { PresentationPath } from "../../types/report-presentation.ts";

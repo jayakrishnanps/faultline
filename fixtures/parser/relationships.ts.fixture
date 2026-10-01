@@ -1,0 +1,27 @@
+// import fake from './comment'; export * from './also-fake';
+const prose = "import('string-only')";
+const template = `export * from './template-only'`;
+import Default, {
+  type Shape as LocalShape,
+  value as renamed
+} from './mixed';
+import { type Only, type Other as Alias } from './all-types';
+import type * as Types from './types';
+import './side-effect';
+export { renamed as publicValue, type LocalShape as PublicShape } from './mixed';
+export type { Shape } from './types';
+export { type Only } from './all-types';
+export * from './barrel';
+export * as tools from './tools';
+export type * from './type-barrel';
+export const { original: exposed, nested: [item = 1], ...rest } = unknownValue;
+export function load() {
+  return { deep: async () => {
+    const literal = await import('./lazy');
+    const computed = await import('./plugins/' + pluginName);
+    const interpolated = await import(`./plugins/${pluginName}`);
+    return literal;
+  } };
+}
+export default class View {}
+/* require('./not-a-call'); */

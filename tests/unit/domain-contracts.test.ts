@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { test } from "node:test";
+import { test } from "vitest";
 import { analysisStatusSchema, publishingStatusSchema, snapshotStatusSchema, graphSideSchema, repositoryIdSchema, githubNumericIdSchema, repositoryPathSchema } from "../../types/domain/primitives.ts";
 import type { GitHubNumericId, RepositoryId } from "../../types/domain/primitives.ts";
 import { extractedImportSchema, importResolutionSchema, repositorySourceInputSchema, sourceFileSchema } from "../../types/domain/source.ts";

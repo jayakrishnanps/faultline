@@ -1,0 +1,3 @@
+import { value as renamed } from './value.js';
+export const answer = renamed;
+export const load = async () => import('./lazy.js');

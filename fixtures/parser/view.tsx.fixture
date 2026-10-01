@@ -1,0 +1,4 @@
+import type { Props } from './types';
+export default function View(props: Props) {
+  return <button onClick={async () => (await import('./click')).run()}>{props.label}</button>;
+}

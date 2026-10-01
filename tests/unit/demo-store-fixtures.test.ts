@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile, readdir } from "node:fs/promises";
-import { test } from "node:test";
+import { matchesGlob } from "node:path";
+import { test } from "vitest";
 import ts from "typescript";
 import { ESLint } from "eslint";
 import { compareFixtureSnapshots, fixtureContentSha, loadDemoManifest, loadDemoStore } from "../../fixtures/demo-store/loader.ts";
@@ -8,6 +9,7 @@ import { demoManifestSchema, revisionIdSchema } from "../../fixtures/demo-store/
 import { repositorySourceInputSchema } from "../../types/domain/source.ts";
 import { traceDependents } from "../../lib/analyzer/traversal.ts";
 import { auditDemoStoreSources } from "../helpers/demo-store-source-audit.ts";
+import vitestConfig from "../../vitest.config.ts";
 
 test("fixture inventory is purposeful, inert and reproducible", async () => {
   const baseline = await loadDemoStore();
@@ -66,7 +68,7 @@ test("authored expected paths exist in source imports; diagnostics stay explicit
   }
 });
 
-test("follow-up restores auth and reduces actual full-PR dependency reach", async (t) => {
+test("follow-up restores auth and reduces actual full-PR dependency reach", async () => {
   const broad = await loadDemoStore("shared-authentication");
   const followUp = await loadDemoStore("localized-follow-up");
   const localized = await loadDemoStore("localized");
@@ -88,11 +90,6 @@ test("follow-up restores auth and reduces actual full-PR dependency reach", asyn
   assert.ok(!followUpReach.nodes.some((node) => node.file === "app/dashboard/page.tsx"));
   assert.ok(followUpReach.nodes.some((node) => node.file === "app/billing/page.tsx"));
   assert.ok([broadReach, followUpReach, localizedReach].every((report) => !report.truncated));
-  t.diagnostic(JSON.stringify({ distinctDependentsExcludingRoots: {
-    localized: localizedReach.nodes.filter((node) => node.distance > 0).length,
-    sharedAuthentication: broadReach.nodes.filter((node) => node.distance > 0).length,
-    localizedFollowUp: followUpReach.nodes.filter((node) => node.distance > 0).length,
-  }, traversalDepth: 12, score: "not computed" }));
 });
 
 test("source-under-analysis stays outside normal TypeScript, ESLint and test discovery", async () => {
@@ -108,6 +105,18 @@ test("source-under-analysis stays outside normal TypeScript, ESLint and test dis
   assert.ok(typeof manifest === "object" && manifest !== null && "scripts" in manifest);
   const scripts = manifest.scripts;
   assert.ok(typeof scripts === "object" && scripts !== null && "test:unit" in scripts && "test:database" in scripts);
-  assert.equal(scripts["test:unit"], "node --test tests/unit/*.test.ts");
+  assert.equal(scripts["test:unit"], "vitest run");
   assert.equal(scripts["test:database"], "node --test tests/database/*.test.ts");
+  const include = vitestConfig.test?.include ?? [];
+  const discovers = (path: string) => include.some((pattern) => matchesGlob(path, pattern));
+  assert.equal(vitestConfig.test?.environment, "node");
+  assert.equal(discovers("tests/unit/analyzer/imports.test.ts"), true);
+  assert.equal(discovers("tests/unit/components/report.test.tsx"), true);
+  for (const path of [
+    "fixtures/demo-store/sources/baseline/tests/auth-token.test.ts.fixture",
+    "fixtures/demo-store/sources/baseline/tests/auth-token.test.ts",
+    "fixtures/demo-store/example.test.tsx",
+    "tests/database/schema.test.ts",
+    "tests/e2e/report.test.ts",
+  ]) assert.equal(discovers(path), false, `Unexpected unit test discovery: ${path}`);
 });
